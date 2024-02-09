@@ -64,7 +64,7 @@ void autonomous(void) {
       copia_de_la_rutina_la_rutina_1();
       break;
     case 2:
-      segunda_estrategia();
+      segunda_estrategia_con_WP();
       break;
 
   //si no se haya ninguna rutina en el swtich se imprimira este mensaje

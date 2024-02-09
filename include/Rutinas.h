@@ -104,9 +104,9 @@ void copia_de_la_rutina_la_rutina_1(){
     Giro_de_brazos(180, 100);//giran 180 grados los brazos del robot
 }
 
-void segunda_estrategia(){
+void segunda_estrategia_con_WP(){
     Sensor_inertia.resetRotation();//se reinicia el sensor de inercia
-    avance_con_tiempo_de_espera('F',70, 38, 2.5);// el robot avanzara 38 pulgadas hacia adelante
+    avance_con_tiempo_de_espera('F',70, 35, 2.5);// el robot avanzara 38 pulgadas hacia adelante
     Giro_de_brazos(100, 50);//giran 100 grados los brazos del robot
     Sensor_inertia.resetRotation();//se reinicia el sensor de inercia
     turnRightWithIndividualSpeeds(90.00, 30, 0, 3);//el robot girara 90 grados a la derecha
@@ -125,7 +125,7 @@ void segunda_estrategia(){
     Sensor_inertia.resetRotation();// se reinica el sensor
     avance_por_tiempo('r', 0.100, 10);// el robot retrocedera 0.100 milisegundos 
     Giro_PID_con_constantes_aumentadas(90.00);// el robot girara 90 grados a la derecha
-    avance_con_tiempo_de_espera('F', 70, 59, 2);// el robot avanzara 59 pulgadas
+    avance_con_tiempo_de_espera('F', 70, 57, 2);// el robot avanzara 59 pulgadas
     Sensor_inertia.resetRotation();//se reinicia el sensor de inercia
     Giro_PID(0.00);//se acomoda el robot en su punto cero
     Giro_PID_con_constantes_aumentadas(-90.00);//el robot gira 90 grados a la izquierda
@@ -136,7 +136,7 @@ void segunda_estrategia(){
     Giro_PID_con_constantes_aumentadas(0.00);//se acomoda el robot en su punto cero
     wait(250, msec);
     Giro_PID_con_constantes_aumentadas(-90.00);//el robot gira 90 grados a la izquierda
-    avance_con_tiempo_de_espera('F', 30, 17, 1);// el robot avanzara 17 pulgadas hacia adelante
+    avance_con_tiempo_de_espera('F', 30, 23, 1);// el robot avanzara 17 pulgadas hacia adelante
     Sensor_inertia.resetRotation();
     Giro_PID_con_constantes_aumentadas(-90.00);//el robot gira 90 grados a la izquierda
     avance_con_tiempo_de_espera('F', 70, 14, 1.5);
@@ -157,13 +157,22 @@ void segunda_estrategia(){
     Giro_de_brazos(0, 100);//los brazos del robot se retraen 
     Sensor_inertia.resetRotation();//se reinica el robot
     Giro_PID(90.0); //el robot gira 90 grados a la derecha
-    avance_con_tiempo_de_espera('F', 40, 35, 3);// el robot avanzara 35 pulgadas hacia adelante
+    avance_con_tiempo_de_espera('F', 40, 45, 3);// el robot avanzara 35 pulgadas hacia adelante
     Sensor_inertia.resetRotation();//se reinicia el sensor de inercia
-    Giro_PID(90.0);//el robot girara 90 grados a la derecha
+    Giro_PID(90.0);//el robot girara 90 grados a la derecha 
+    avance_con_tiempo_de_espera('F', 80, 28, 3);//los brazos del robot avanzaran 26 pulgadas
+    Giro_PID_con_constantes_aumentadas(150);
+    Giro_de_brazos(70, 50);   
+
+
+
+//EN CASO DE QUE SE OCUPE WINNING POINT, ESTA PARTE TRATARA DE TOCAR EL POSTE
+    
+    /*Giro_PID(90.0);//el robot girara 90 grados a la derecha
     Giro_de_brazos(100, 50);//los brazos del robot giran 100 grados 
     avance_con_tiempo_de_espera('F', 80, 28, 3);//los brazos del robot avanzaran 26 pulgadas
     Sensor_inertia.resetRotation();//se reinicia el sensor
     Giro_PID(-10.0);//el robot gira 10 grados a la izuwierda al poste
     Brazos_Piston.set(1);//contraen los pistones
-    Giro_de_brazos(150, 100);//toca el poste a los 150 grados de los brazos
+    Giro_de_brazos(150, 100);//toca el poste a los 150 grados de los brazos*/
 }
