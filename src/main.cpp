@@ -89,7 +89,6 @@ void usercontrol(void) {
   MotoresDerechos.setVelocity(100, pct);
   MotoresIzquierdos.setVelocity(100, pct);
 
-  Drivetrain.setStopping(hold);
   MotorGanchoA.setVelocity(100, pct);
   MotorGanchoB.setVelocity(100, pct);
 
@@ -97,10 +96,19 @@ void usercontrol(void) {
   int k = 1;
   while (1) {
     //jousticks del lado izquierdo de la base
+    if(Control.Axis3.value()>= 55 || Control.Axis3.value()<= -55){
       MotoresIzquierdos.spin(forward, Control.Axis3.value() / vel * 0.75, percent);
+    }
+    else{
+      MotoresIzquierdos.stop(hold);
+    }
   //jousticks del lado derecho de la base
+    if(Control.Axis2.value()>= 55 || Control.Axis2.value()<= -55){
       MotoresDerechos.spin(forward, Control.Axis2.value() / vel * 0.75, percent);
-        
+    }
+    else{
+      MotoresDerechos.stop(hold);
+    }
     //si se precionan L1 los ganchos del robot van hacia arriba si se preciona L2 se agachan
     if(Control.ButtonL1.pressing()){
         Gancho.setVelocity(100, pct);
