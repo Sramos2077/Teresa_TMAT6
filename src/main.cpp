@@ -174,7 +174,7 @@ int main() {
   while (true) {
     //se imprimen los grados de la base en el control
     Control.Screen.setCursor(1,1);
-    Control.Screen.print("DEG: %f", Drivetrain.rotation(deg));
+    Control.Screen.print("!!VAMOS DEY, TU PUEDES!!");
     wait(100, msec);
   }
 }

@@ -67,7 +67,7 @@ void primera_estrategia(){
     Brazos_Piston.set(1);//los brazos del piston se contraen 
     Giro_de_brazos(180, 100);
 }
-
+    //RUTINA SIMILAR A LA PRIMERA PERO CON PRECARGA DE TRIBALL Y OTRO PUNTO DE INICIO
 void copia_de_la_rutina_la_rutina_1(){
     /*EL ROBOT AVANZARA 80 PULGADAS PARA PASAR AL OTRO LADO DEL CAMPO OSEASE NUESTRA ALIANZA */
     Giro_PID(0.0);//se acomoda el robot en su punto 0
